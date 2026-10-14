@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chetan Sawale — DevOps • Cloud • Linux</title>
+  <meta name="description" content="Portfolio of Chetan Sawale — aspiring DevOps & Cloud engineer. Linux, Docker, AWS, CI/CD, monitoring." />
+  <!-- Favicon: tiny terminal prompt -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a0e14'/%3E%3Ctext x='10' y='42' font-family='monospace' font-size='28' fill='%2300ff88'%3E$%3C/text%3E%3Crect x='30' y='30' width='16' height='8' fill='%2300ff88'/%3E%3C/svg%3E" />
+  <!-- Fonts: Space Grotesk (display) + JetBrains Mono (terminal) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ============ BOOT PRELOADER ============ -->
+  <div id="preloader" aria-hidden="true">
+    <div class="boot-term">
+      <div class="boot-lines" id="bootLines"></div>
+      <div class="boot-bar"><div class="boot-fill" id="bootFill"></div></div>
+      <div class="boot-pct" id="bootPct">0%</div>
+    </div>
+  </div>
+
+  <!-- Ambient canvas background (grid + drifting nodes) -->
+  <canvas id="bg" aria-hidden="true"></canvas>
+  <!-- Custom glow cursor (desktop only) -->
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <!-- ============ NAVBAR ============ -->
+  <header id="nav">
+    <a href="#top" class="logo"><span class="logo-prompt">$</span> chetan<span class="logo-dim">.dev</span></a>
+    <nav class="nav-links">
+      <a href="#about">about</a>
+      <a href="#pipeline">pipeline</a>
+      <a href="#stack">stack</a>
+      <a href="#projects">projects</a>
+      <a href="#experience">experience</a>
+      <a href="#contact">contact</a>
+    </nav>
+    <a href="#contact" class="btn btn-small magnetic">hire_me.sh</a>
+    <button id="menuBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </header>
+
+  <!-- Mobile fullscreen menu -->
+  <div id="mobileMenu" aria-hidden="true">
+    <a href="#about">about</a>
+    <a href="#pipeline">pipeline</a>
+    <a href="#stack">stack</a>
+    <a href="#projects">projects</a>
+    <a href="#experience">experience</a>
+    <a href="#contact">contact</a>
+  </div>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section id="hero">
+      <div class="hero-inner">
+        <p class="eyebrow reveal">// aspiring devops &amp; cloud engineer</p>
+        <h1 class="hero-name reveal">
+          <span class="line-solid">CHETAN</span>
+          <span class="line-stroke">SAWALE</span>
+        </h1>
+        <p class="hero-role reveal">DevOps <span>•</span> Cloud <span>•</span> Linux<span class="blink">_</span></p>
+
+        <!-- Animated terminal -->
+        <div class="terminal reveal">
+          <div class="term-bar">
+            <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+            <span class="term-title">chetan@mission-control: ~</span>
+          </div>
+          <div class="term-body" id="termBody" aria-label="Terminal introduction"></div>
+        </div>
+
+        <!-- Live status HUD -->
+        <div class="hud reveal">
+          <span class="chip"><i class="pulse-dot"></i>systems: operational</span>
+          <span class="chip">location: mumbai, in</span>
+          <span class="chip"><i class="ok">●</i> open_to_work: true</span>
+        </div>
+
+        <div class="hero-cta reveal">
+          <a href="#projects" class="btn magnetic">view_projects →</a>
+          <a href="#contact" class="btn btn-ghost magnetic">./contact.sh</a>
+        </div>
+      </div>
+      <a href="#about" class="scroll-hint" aria-label="Scroll down"><span></span></a>
+    </section>
+
+    <!-- ============ SKILLS MARQUEE ============ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>LINUX</span><span>AWS</span><span>DOCKER</span><span>KUBERNETES</span><span>CI/CD</span><span>BASH</span><span>PROMETHEUS</span><span>GRAFANA</span><span>TERRAFORM</span><span>GIT</span><span>GITHUB</span><span>PYTHON</span><span>JAVASCRIPT</span><span>SQL</span><span>NODE.JS</span><span>PHP</span>
+        <span>LINUX</span><span>AWS</span><span>DOCKER</span><span>KUBERNETES</span><span>CI/CD</span><span>BASH</span><span>PROMETHEUS</span><span>GRAFANA</span><span>TERRAFORM</span><span>GIT</span><span>GITHUB</span><span>PYTHON</span><span>JAVASCRIPT</span><span>SQL</span><span>NODE.JS</span><span>PHP</span>
+      </div>
+    </div>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="section">
+      <div class="container">
+        <p class="section-tag reveal">$ whoami</p>
+        <h2 class="section-title reveal">about<span class="accent">.</span></h2>
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p class="lead">I'm <strong>Chetan Sawale</strong> — a B.Tech Computer Engineering graduate (University of Mumbai, 2026), currently working as a <strong>Reports Executive at Hitachi Cash Management Services</strong> where I wrangle ATM transaction data with SQL, Python, Excel and Power&nbsp;BI.</p>
+            <p>Off the clock, I'm going all-in on the transition into <strong>DevOps &amp; Cloud Engineering</strong>: Linux homelabs, Docker builds, AWS experiments, and Prometheus dashboards. I break things in the lab so production stays boring.</p>
+            <div class="about-facts">
+              <div><span>degree</span>B.Tech Computer Engg '26</div>
+              <div><span>day_job</span>Reports Executive @ Hitachi</div>
+              <div><span>mission</span>DevOps &amp; Cloud Engineer</div>
+              <div><span>base</span>Mumbai, India — open to relocate</div>
+            </div>
+          </div>
+          <div class="about-photo reveal">
+            <div class="photo-frame">
+              <img src="assets/me.png" alt="Portrait of Chetan Sawale" />
+              <div class="scanlines" aria-hidden="true"></div>
+            </div>
+            <p class="photo-cap"><span class="ok">●</span> me.png — loaded successfully</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CI/CD PIPELINE VIZ ============ -->
+    <section id="pipeline" class="section">
+      <div class="container">
+        <p class="section-tag reveal">$ watch pipeline --live</p>
+        <h2 class="section-title reveal">ship_it<span class="accent">.</span></h2>
+        <p class="section-sub reveal">How I like software to move — an infinite loop of build, test and deploy.</p>
+        <div class="pipeline reveal" id="pipelineViz">
+          <div class="stage" data-stage="0">
+            <div class="stage-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
+            </div>
+            <p class="stage-name">code</p>
+            <p class="stage-status">waiting</p>
+          </div>
+          <div class="connector"><div class="packet"></div></div>
+          <div class="stage" data-stage="1">
+            <div class="stage-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.3 7l8.7 5 8.7-5M12 22V12"/></svg>
+            </div>
+            <p class="stage-name">build</p>
+            <p class="stage-status">waiting</p>
+          </div>
+          <div class="connector"><div class="packet"></div></div>
+          <div class="stage" data-stage="2">
+            <div class="stage-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </div>
+            <p class="stage-name">test</p>
+            <p class="stage-status">waiting</p>
+          </div>
+          <div class="connector"><div class="packet"></div></div>
+          <div class="stage" data-stage="3">
+            <div class="stage-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
+            </div>
+            <p class="stage-name">deploy</p>
+            <p class="stage-status">waiting</p>
+          </div>
+          <div class="connector"><div class="packet"></div></div>
+          <div class="stage" data-stage="4">
+            <div class="stage-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 15l4-6 4 3 5-8"/></svg>
+            </div>
+            <p class="stage-name">monitor</p>
+            <p class="stage-status">waiting</p>
+          </div>
+        </div>
+        <p class="pipeline-log reveal" id="pipelineLog"><span class="ok">●</span> pipeline idle — watching for pushes…</p>
+      </div>
+    </section>
+
+    <!-- ============ STACK ============ -->
+    <section id="stack" class="section">
+      <div class="container">
+        <p class="section-tag reveal">$ cat ~/stack/*.cfg</p>
+        <h2 class="section-title reveal">the_stack<span class="accent">.</span></h2>
+        <div class="stack-grid">
+          <div class="stack-card reveal">
+            <p class="stack-file">linux.cfg</p>
+            <h3>Linux &amp; Scripting</h3>
+            <div class="tags"><span>Linux</span><span>Bash</span><span>Networking</span><span>systemd</span></div>
+          </div>
+          <div class="stack-card reveal">
+            <p class="stack-file">cloud.cfg</p>
+            <h3>Cloud</h3>
+            <div class="tags"><span>AWS</span><span>EC2</span></div>
+          </div>
+          <div class="stack-card reveal">
+            <p class="stack-file">containers.cfg</p>
+            <h3>Containers</h3>
+            <div class="tags"><span>Docker</span><span>Docker Compose</span></div>
+          </div>
+          <div class="stack-card reveal">
+            <p class="stack-file">cicd.cfg</p>
+            <h3>CI/CD &amp; GitOps</h3>
+            <div class="tags"><span>Git</span><span>GitHub</span><span>CI/CD concepts</span></div>
+          </div>
+          <div class="stack-card reveal">
+            <p class="stack-file">monitoring.cfg</p>
+            <h3>Monitoring</h3>
+            <div class="tags"><span>Prometheus</span><span>Grafana</span><span>Alertmanager</span></div>
+          </div>
+          <div class="stack-card reveal">
+            <p class="stack-file">languages.cfg</p>
+            <h3>Languages</h3>
+            <div class="tags"><span>Python</span><span>JavaScript</span><span>Node.js</span><span>PHP</span><span>SQL</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section id="projects" class="section">
+      <div class="container">
+        <p class="section-tag reveal">$ ls ~/projects --deployed</p>
+        <h2 class="section-title reveal">projects<span class="accent">.</span></h2>
+
+        <!-- Featured: AsuraGPT -->
+        <article class="project featured reveal">
+          <div class="proj-head">
+            <span class="badge live"><i></i>live</span>
+            <span class="proj-index">~/projects/featured</span>
+          </div>
+          <h3>AsuraGPT</h3>
+          <p class="proj-desc">AI chat application — full-stack build with a JavaScript backend and frontend. My first project to make it all the way to production.</p>
+          <div class="tags"><span>JavaScript</span><span>Backend</span><span>Frontend</span><span>AI</span></div>
+          <div class="proj-links">
+            <a href="https://asuragpt-2.onrender.com" target="_blank" rel="noopener" class="btn btn-small magnetic">live demo ↗</a>
+            <a href="https://github.com/ChetanSawale/AsuraGPT" target="_blank" rel="noopener" class="btn btn-small magnetic">repo ↗</a>
+          </div>
+        </article>
+
+        <div class="project-grid">
+          <article class="project reveal">
+            <div class="proj-head">
+              <span class="badge shipped"><i></i>shipped</span>
+              <span class="proj-index">01</span>
+            </div>
+            <h3>DevOps MCP Server</h3>
+            <p class="proj-desc">MCP server that lets AI assistants manage Linux servers — system stats, Docker, systemd, logs and EC2. Built for the Amazon "Build, Ship, Shape" hackathon.</p>
+            <div class="tags"><span>Node.js</span><span>TypeScript</span><span>MCP</span><span>Hackathon</span></div>
+            <div class="proj-links">
+              <a href="https://github.com/ChetanSawale/devops-mcp-server" target="_blank" rel="noopener">repo ↗</a>
+            </div>
+          </article>
+
+          <article class="project reveal">
+            <div class="proj-head">
+              <span class="badge shipped"><i></i>shipped</span>
+              <span class="proj-index">02</span>
+            </div>
+            <h3>Linux Monitoring Lab</h3>
+            <p class="proj-desc">Prometheus + Grafana + Alertmanager observability lab with 7 validated alert rules, a provisioned dashboard and hands-on incident drills.</p>
+            <div class="tags"><span>Prometheus</span><span>Grafana</span><span>Alertmanager</span></div>
+            <div class="proj-links">
+              <a href="https://github.com/ChetanSawale/linux-monitoring-lab" target="_blank" rel="noopener">repo ↗</a>
+            </div>
+          </article>
+
+          <article class="project reveal">
+            <div class="proj-head">
+              <span class="badge shipped"><i></i>shipped</span>
+              <span class="proj-index">03</span>
+            </div>
+            <h3>Linux Server Health Check</h3>
+            <p class="proj-desc">Bash health-check script — CPU/memory/disk thresholds, top processes, service status, failed SSH logins and timestamped reports.</p>
+            <div class="tags"><span>Bash</span><span>Linux</span><span>Scripting</span></div>
+            <div class="proj-links">
+              <a href="https://github.com/ChetanSawale/linux-server-health-check" target="_blank" rel="noopener">repo ↗</a>
+            </div>
+          </article>
+
+          <article class="project reveal">
+            <div class="proj-head">
+              <span class="badge shipped"><i></i>shipped</span>
+              <span class="proj-index">04</span>
+            </div>
+            <h3>EkSudhaar</h3>
+            <p class="proj-desc">Civic-tech for the Code for India hackathon — scores identity-correction applications against a 28-rule national + state knowledge base.</p>
+            <div class="tags"><span>Civic Tech</span><span>Hackathon</span><span>Full-stack</span></div>
+            <div class="proj-links">
+              <a href="https://github.com/ChetanSawale/eksudhaar" target="_blank" rel="noopener">repo ↗</a>
+            </div>
+          </article>
+
+          <article class="project reveal">
+            <div class="proj-head">
+              <span class="badge shipped"><i></i>shipped</span>
+              <span class="proj-index">05</span>
+            </div>
+            <h3>Docker Compose Projects</h3>
+            <p class="proj-desc">Containerized multi-service applications — Node.js + MongoDB stacks orchestrated with Docker Compose.</p>
+            <div class="tags"><span>Docker</span><span>Compose</span><span>Node.js</span><span>MongoDB</span></div>
+            <div class="proj-links">
+              <a href="https://github.com/ChetanSawale/docker_compose_pro" target="_blank" rel="noopener">repo ↗</a>
+            </div>
+          </article>
+
+          <article class="project ghost reveal" aria-label="More projects coming soon">
+            <div class="proj-head">
+              <span class="badge soon"><i></i>queued</span>
+              <span class="proj-index">06</span>
+            </div>
+            <h3>more deploying soon<span class="blink">_</span></h3>
+            <p class="proj-desc">The pipeline never stops. New builds are in progress — check back after the next deploy.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE (git log) ============ -->
+    <section id="experience" class="section">
+      <div class="container">
+        <p class="section-tag reveal">$ git log --oneline --career</p>
+        <h2 class="section-title reveal">git_log<span class="accent">.</span></h2>
+        <div class="gitlog reveal">
+          <div class="commit">
+            <p class="commit-line"><span class="hash">9f3a2c1</span> <span class="date">(2026-05 → present)</span> <span class="msg">reports-executive</span> <span class="branch">HEAD → main</span></p>
+            <p class="commit-body">Reports Executive @ <strong>Hitachi Cash Management Services</strong><br />ATM transaction reporting — SQL · Python · Excel · Power BI</p>
+          </div>
+          <div class="commit">
+            <p class="commit-line"><span class="hash">7b1e4d0</span> <span class="date">(2026-10)</span> <span class="msg">devops-mcp-server</span></p>
+            <p class="commit-body">Builder @ <strong>Amazon "Build, Ship, Shape" Hackathon</strong><br />Node.js/TypeScript MCP server — system stats · Docker · systemd · logs · EC2</p>
+          </div>
+          <div class="commit">
+            <p class="commit-line"><span class="hash">a4c88b2</span> <span class="date">(2026-10)</span> <span class="msg">eksudhaar</span></p>
+            <p class="commit-body">Builder @ <strong>Code for India Hackathon</strong><br />Civic-tech — 28-rule knowledge base scoring identity-correction applications</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="section">
+      <div class="container">
+        <p class="section-tag reveal">$ curl -X POST /api/contact</p>
+        <h2 class="section-title reveal">ping_me<span class="accent">.</span></h2>
+        <div class="contact-grid">
+          <div class="reveal">
+            <div class="api-card">
+              <p class="api-method"><span class="method">POST</span> https://chetan.dev/api/contact</p>
+<pre class="api-body">{
+  "name": "you",
+  "email": "you@example.com",
+  "message": "let's build something reliable"
+}</pre>
+              <p class="api-note"><span class="ok">●</span> 200 OK — I reply within 24h</p>
+            </div>
+            <div class="config-card">
+              <p class="config-title">[contact]</p>
+              <dl>
+                <div><dt>email</dt><dd><a href="mailto:sawalechetan102@gmail.com">sawalechetan102@gmail.com</a></dd></div>
+                <div><dt>phone</dt><dd><a href="tel:+919699486717">+91 9699486717</a></dd></div>
+                <div><dt>location</dt><dd>Mumbai, India</dd></div>
+                <div><dt>github</dt><dd><a href="https://github.com/ChetanSawale" target="_blank" rel="noopener">github.com/ChetanSawale</a></dd></div>
+                <div><dt>linkedin</dt><dd><a href="https://www.linkedin.com/in/chetan-sawale-577b63438" target="_blank" rel="noopener">linkedin.com/in/chetan-sawale-577b63438</a></dd></div>
+              </dl>
+            </div>
+          </div>
+          <form id="contactForm" class="reveal" novalidate>
+            <label>your_name<input type="text" id="cfName" placeholder="ada_lovelace" required /></label>
+            <label>your_email<input type="email" id="cfEmail" placeholder="you@example.com" required /></label>
+            <label>message<textarea id="cfMsg" rows="5" placeholder="let's talk about..." required></textarea></label>
+            <button type="submit" class="btn magnetic">send_transmission →</button>
+            <p class="form-note" id="formNote" role="status"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <p>built &amp; deployed by <strong>chetan sawale</strong> <span class="sep">•</span> uptime <span class="ok">99.9%</span> <span class="sep">•</span> v2.0.0</p>
+    <a href="#top" class="to-top" aria-label="Back to top">↑ top</a>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
