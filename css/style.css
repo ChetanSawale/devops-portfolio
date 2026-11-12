@@ -133,6 +133,7 @@ img { max-width: 100%; display: block; }
 .btn-ghost { background: transparent; color: var(--blue); border-color: var(--blue); box-shadow: 4px 4px 0 rgba(22, 33, 46, 0.18); }
 .btn-ghost:hover { background: var(--blue-soft); box-shadow: 6px 6px 0 rgba(22, 33, 46, 0.18); }
 .btn-small { padding: 10px 20px; font-size: 0.8rem; }
+.btn:disabled { opacity: .55; cursor: wait; transform: none; box-shadow: 4px 4px 0 var(--blue); }
 
 /* ---------- Hero (two-column: copy left, console right) ---------- */
 #hero {

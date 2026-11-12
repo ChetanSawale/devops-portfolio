@@ -266,25 +266,51 @@
     });
   }
 
-  /* ---------- 9. Contact form → mailto ---------- */
+  /* ---------- 9. Contact form → Web3Forms ---------- */
   var form = document.getElementById('contactForm');
   var formNote = document.getElementById('formNote');
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    var name = document.getElementById('cfName').value.trim();
-    var email = document.getElementById('cfEmail').value.trim();
-    var msg = document.getElementById('cfMsg').value.trim();
-    if (!name || !email || !msg) {
-      formNote.textContent = '! all fields required — transmission aborted';
-      formNote.style.color = 'var(--amber)';
-      return;
-    }
-    var subject = encodeURIComponent('Portfolio ping from ' + name);
-    var body = encodeURIComponent(msg + '\n\n— ' + name + ' (' + email + ')');
-    window.location.href = 'mailto:sawalechetan102@gmail.com?subject=' + subject + '&body=' + body;
-    formNote.textContent = '● opening your mail client — transmission ready';
-    formNote.style.color = 'var(--green)';
-  });
+  if (form && formNote) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var name = document.getElementById('cfName').value.trim();
+      var email = document.getElementById('cfEmail').value.trim();
+      var msg = document.getElementById('cfMsg').value.trim();
+      if (!name || !email || !msg) {
+        formNote.textContent = '! all fields required — transmission aborted';
+        formNote.style.color = 'var(--amber)';
+        return;
+      }
+      var btn = form.querySelector('button[type="submit"]');
+      if (btn) btn.disabled = true;
+      formNote.textContent = '… transmitting — hold on';
+      formNote.style.color = 'var(--text)';
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          access_key: '1aa9c545-2f90-43bb-8b24-379806868940',
+          subject: 'DevOps portfolio ping from ' + name,
+          name: name,
+          email: email,
+          message: msg
+        })
+      }).then(function (r) { return r.json(); }).then(function (data) {
+        if (data.success) {
+          formNote.textContent = '● transmission received — I\'ll get back to you';
+          formNote.style.color = 'var(--green)';
+          form.reset();
+        } else {
+          formNote.textContent = '! transmission failed — please try again';
+          formNote.style.color = 'var(--red)';
+        }
+        if (btn) btn.disabled = false;
+      }).catch(function () {
+        formNote.textContent = '! network error — please try again';
+        formNote.style.color = 'var(--red)';
+        if (btn) btn.disabled = false;
+      });
+    });
+  }
 
   /* ---------- 10. Boot it ---------- */
   runBoot();
