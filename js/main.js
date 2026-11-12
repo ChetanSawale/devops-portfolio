@@ -13,7 +13,7 @@
     '> loading kernel modules ............ <span class="ok-line">OK</span>',
     '> mounting /dev/ambition ............ <span class="ok-line">OK</span>',
     '> starting docker daemon ............ <span class="ok-line">OK</span>',
-    '> deploying portfolio v2.0 .......... <span class="ok-line">OK</span>',
+    '> deploying portfolio v2.1 .......... <span class="ok-line">OK</span>',
     '> status: <span class="ok-line">ready_</span>'
   ];
   var preloader = document.getElementById('preloader');
@@ -200,7 +200,7 @@
   }
   initNodes();
   function drawGrid() {
-    ctx.strokeStyle = 'rgba(30, 42, 58, 0.35)';
+    ctx.strokeStyle = 'rgba(22, 33, 46, 0.10)';
     ctx.lineWidth = 1;
     var gap = 56;
     ctx.beginPath();
@@ -220,11 +220,11 @@
         dx = a.x - b.x; dy = a.y - b.y;
         d = Math.sqrt(dx * dx + dy * dy);
         if (d < 130) {
-          ctx.strokeStyle = 'rgba(0, 255, 136,' + (0.10 * (1 - d / 130)).toFixed(3) + ')';
+          ctx.strokeStyle = 'rgba(30, 64, 175,' + (0.10 * (1 - d / 130)).toFixed(3) + ')';
           ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
         }
       }
-      ctx.fillStyle = 'rgba(0, 212, 255, 0.5)';
+      ctx.fillStyle = 'rgba(30, 64, 175, 0.45)';
       ctx.beginPath(); ctx.arc(a.x, a.y, a.r, 0, Math.PI * 2); ctx.fill();
     }
   }

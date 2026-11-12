@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chetan Sawale — DevOps • Cloud • Linux</title>
   <meta name="description" content="Portfolio of Chetan Sawale — aspiring DevOps & Cloud engineer. Linux, Docker, AWS, CI/CD, monitoring." />
-  <!-- Favicon: tiny terminal prompt -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a0e14'/%3E%3Ctext x='10' y='42' font-family='monospace' font-size='28' fill='%2300ff88'%3E$%3C/text%3E%3Crect x='30' y='30' width='16' height='8' fill='%2300ff88'/%3E%3C/svg%3E" />
-  <!-- Fonts: Space Grotesk (display) + JetBrains Mono (terminal) -->
+  <!-- Favicon: tiny terminal prompt on paper -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23f4f0e6'/%3E%3Ctext x='10' y='42' font-family='monospace' font-size='28' fill='%231e40af'%3E$%3C/text%3E%3Crect x='30' y='30' width='16' height='8' fill='%231e40af'/%3E%3C/svg%3E" />
+  <!-- Fonts: Archivo (display) + JetBrains Mono (terminal) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -59,12 +59,26 @@
     <!-- ============ HERO ============ -->
     <section id="hero">
       <div class="hero-inner">
-        <p class="eyebrow reveal">// aspiring devops &amp; cloud engineer</p>
-        <h1 class="hero-name reveal">
-          <span class="line-solid">CHETAN</span>
-          <span class="line-stroke">SAWALE</span>
-        </h1>
-        <p class="hero-role reveal">DevOps <span>•</span> Cloud <span>•</span> Linux<span class="blink">_</span></p>
+        <div class="hero-copy">
+          <p class="eyebrow reveal">// aspiring devops &amp; cloud engineer</p>
+          <h1 class="hero-name reveal">
+            <span class="line-solid">CHETAN</span>
+            <span class="line-stroke">SAWALE</span>
+          </h1>
+          <p class="hero-role reveal">DevOps <span>•</span> Cloud <span>•</span> Linux<span class="blink">_</span></p>
+
+          <!-- Live status HUD -->
+          <div class="hud reveal">
+            <span class="chip"><i class="pulse-dot"></i>systems: operational</span>
+            <span class="chip">location: mumbai, in</span>
+            <span class="chip"><i class="ok">●</i> open_to_work: true</span>
+          </div>
+
+          <div class="hero-cta reveal">
+            <a href="#projects" class="btn magnetic">view_projects →</a>
+            <a href="#contact" class="btn btn-ghost magnetic">./contact.sh</a>
+          </div>
+        </div>
 
         <!-- Animated terminal -->
         <div class="terminal reveal">
@@ -73,18 +87,6 @@
             <span class="term-title">chetan@mission-control: ~</span>
           </div>
           <div class="term-body" id="termBody" aria-label="Terminal introduction"></div>
-        </div>
-
-        <!-- Live status HUD -->
-        <div class="hud reveal">
-          <span class="chip"><i class="pulse-dot"></i>systems: operational</span>
-          <span class="chip">location: mumbai, in</span>
-          <span class="chip"><i class="ok">●</i> open_to_work: true</span>
-        </div>
-
-        <div class="hero-cta reveal">
-          <a href="#projects" class="btn magnetic">view_projects →</a>
-          <a href="#contact" class="btn btn-ghost magnetic">./contact.sh</a>
         </div>
       </div>
       <a href="#about" class="scroll-hint" aria-label="Scroll down"><span></span></a>
@@ -379,7 +381,7 @@
 
   <!-- ============ FOOTER ============ -->
   <footer>
-    <p>built &amp; deployed by <strong>chetan sawale</strong> <span class="sep">•</span> uptime <span class="ok">99.9%</span> <span class="sep">•</span> v2.0.0</p>
+    <p>built &amp; deployed by <strong>chetan sawale</strong> <span class="sep">•</span> uptime <span class="ok">99.9%</span> <span class="sep">•</span> v2.1.0</p>
     <a href="#top" class="to-top" aria-label="Back to top">↑ top</a>
   </footer>
 
